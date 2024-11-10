@@ -1,0 +1,33 @@
+graph TD
+  A[User enters HomePage] --> B{User has account?}
+  B -->|No| C[Click Sign Up]
+  B -->|Yes| D[Click Log In]
+  C --> E[Open OnboardingSignup]
+  E --> F[User fills signup form]
+  F --> G[User submits form]
+  G --> H[Redirect to LandingPage]
+  H --> I{New User?}
+  I -->|Yes| J[Show Consent Popup]
+  J --> K[User grants consent]
+  K --> L[Redirect to FinancialAccountsPage]
+  I -->|No| L
+  D --> M[Open Login Page]
+  M --> N[User enters credentials]
+  N --> O[User submits login form]
+  O --> H
+  L --> P[View Financial Accounts]
+  P --> Q{Accounts without nominees?}
+  Q -->|Yes| R[Open NomineeAllocationPopup]
+  R --> S[User selects nominees]
+  S --> T[Update account nominees]
+  Q -->|No| U[Continue using app]
+  H --> V[Check Family Tree]
+  V --> W[Open FamilyTreePopup]
+  W --> X{Add family member?}
+  X -->|Yes| Y[Open AddFamilyMemberPopup]
+  Y --> Z[Add new member to tree]
+  X -->|No| AA[View family tree]
+  H --> AB[Check Unclaimed Accounts]
+  AB --> AC[Redirect to RBI Portal]
+  H --> AD[Logout]
+  AD --> A
