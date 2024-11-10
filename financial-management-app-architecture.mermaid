@@ -1,0 +1,41 @@
+graph TD
+    A[User] -->|Interacts with| B[Frontend]
+    B -->|API Calls| C[Backend]
+    C -->|Data Storage| D[(Database)]
+    C -->|External API Calls| E[Account Aggregator]
+    C -->|External API Calls| F[CBSE Certificate Verification]
+    C -->|Redirect| G[RBI Unclaimed Deposits Portal]
+
+    subgraph Frontend
+        B1[Home Page]
+        B2[Onboarding Signup]
+        B3[Login Page]
+        B4[Landing Page]
+        B5[Financial Accounts Page]
+        B6[Family Tree Popup]
+        B7[Nominee Allocation Popup]
+        B8[Add Family Member Popup]
+    end
+
+    subgraph Backend
+        C1[User Management]
+        C2[Account Management]
+        C3[Family Tree Management]
+        C4[Nominee Management]
+        C5[Consent Management]
+    end
+
+    B --> B1
+    B --> B2
+    B --> B3
+    B --> B4
+    B --> B5
+    B --> B6
+    B --> B7
+    B --> B8
+
+    C --> C1
+    C --> C2
+    C --> C3
+    C --> C4
+    C --> C5
