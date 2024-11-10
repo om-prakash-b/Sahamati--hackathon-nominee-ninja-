@@ -1,0 +1,16 @@
+graph TD
+  A[HomePage] --> B[OnboardingSignup]
+  A --> C[Login Page]
+  B --> D[LandingPage]
+  C --> D
+  D --> E[Consent Popup]
+  E --> F[FinancialAccountsPage]
+  D --> F
+  F --> G[NomineeAllocationPopup]
+  D --> H[Check Family Tree]
+  D --> I[Check Unclaimed Accounts]
+  H --> J[FamilyTreePopup]
+  J --> K[AddFamilyMemberPopup]
+  I --> L[RBI Unclaimed Deposits Portal]
+  D --> M[Logout]
+  M --> A
